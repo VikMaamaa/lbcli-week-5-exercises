@@ -103,3 +103,39 @@ jobs:
             echo "❌ Error: CSV Script verification failed!"
             exit 1
           fi
+
+      - name: 06.sh - Verify P2SH Address from Redeem Script
+        run: |
+          chmod +x submission/06.sh
+          RESULT=$(submission/06.sh)
+          EXPECTED=2N8MytPW2ih27LctLjn6LfLFZZb1PFSsqBr
+          if [[ "$RESULT" == "$EXPECTED" ]]; then
+            echo "✅ Success: P2SH Address verification passed!"
+          else
+            echo "❌ Error: P2SH Address verification failed!"
+            exit 1
+          fi
+
+      - name: 07.sh - Verify 2-of-3 Multisig Redeem Script
+        run: |
+          chmod +x submission/07.sh
+          SCRIPT=$(submission/07.sh)
+          EXPECTED_OUTPUT=522102da2f10746e9778dd57bd0276a4f84101c4e0a711f9cfd9f09cde55acbdd2d1912102bfde48be4aa8f4bf76c570e98a8d287f9be5638412ab38dede8e78df82f33fa32102e3af28965693b9ce1228f9d468149b831d6a0540b25e8a9900f71372c11fb27753ae
+          if [[ "$SCRIPT" == "$EXPECTED_OUTPUT" ]]; then
+            echo "✅ Success: 2-of-3 Multisig Redeem Script verification passed!"
+          else
+            echo "❌ Error: 2-of-3 Multisig Redeem Script verification failed!"
+            exit 1
+          fi
+
+      - name: 08.sh - Verify Time-based CSV Script
+        run: |
+          chmod +x submission/08.sh
+          SCRIPT=$(submission/08.sh)
+          EXPECTED_OUTPUT=03a77640b27576a9141e51fcdc14be9a148bb0aaec9197eb47c83776fb88ac
+          if [[ "$SCRIPT" == "$EXPECTED_OUTPUT" ]]; then
+            echo "✅ Success: Time-based CSV Script verification passed!"
+          else
+            echo "❌ Error: Time-based CSV Script verification failed!"
+            exit 1
+          fi

@@ -18,7 +18,7 @@ Exercise should be done using Regtest network.
 
 6. Confirm your forked repository has a green check mark.
 
-<img src="https://github.com/btrust-builders/lbcli-week-5-exercises/blob/main/success.png" width="500" />
+<img src="https://github.com/btrust-builders/lbcli-week-5-exercises/blob/main/success.png" width="300" />
 
 7. Submit your solution to this form: [Google form](https://forms.gle/MHXcSUFStn5vr5dXA).
 
